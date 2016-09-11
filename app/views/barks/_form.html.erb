@@ -1,0 +1,27 @@
+<%= form_for(bark) do |f| %>
+  <% if bark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bark.errors.count, "error") %> prohibited this bark from being saved:</h2>
+
+      <ul>
+      <% bark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bark %>
+    <%= f.text_field :bark %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dog_id %>
+    <%= f.number_field :dog_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
