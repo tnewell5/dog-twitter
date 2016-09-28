@@ -1,5 +1,6 @@
 class BarksController < ApplicationController
   before_action :set_bark, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_dog!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /barks
   # GET /barks.json
